@@ -1,0 +1,16 @@
+model: configs/models/decider_2b.yaml
+train: configs/train/sft_lora.yaml
+data:
+  source: tsqa
+  converters: [anomaly]
+  splits: [train]
+  domains: [Environment]
+  domain_offset: 3000
+  val_fraction: 0.02
+  shuffle_options: true
+  seed: 0
+eval:
+  - suffix: dev-env
+    data: {source: tsqa, converters: [anomaly], splits: [train], domains: [Environment], max_per_domain: 1000, val_fraction: 0.02, shuffle_options: true, seed: 0, state: "@train"}
+  - suffix: val-environment
+    data: {source: tsqa, converters: [anomaly], splits: [val], domains: [Environment], val_fraction: 0.02, shuffle_options: true, seed: 0, state: "@train"}

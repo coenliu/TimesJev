@@ -1,0 +1,29 @@
+[project]
+name = "timesjev"
+version = "0.1.0"
+description = "TimesJev: a time series System 1 model with a compact representation and a frozen Decider backbone"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+dependencies = [
+    "numpy==2.1.3",
+    "pandas==2.2.3",
+    "pyyaml==6.0.2",
+    "scipy==1.15.3",
+    "scikit-learn==1.6.1",
+    "pycatch22==0.4.5",
+    "torch==2.9.1",
+    "transformers==5.17.0",
+    "peft==0.21.0",
+    "accelerate==1.12.0",
+    "safetensors==0.8.0",
+    "huggingface_hub==1.33.0",
+    "decider-ai==1.8.0",
+]
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

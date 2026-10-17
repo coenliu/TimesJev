@@ -1,0 +1,5 @@
+inherit: D4B-aiops-frozen-sel-aiops-stg-32-s42.yaml
+name: D4B-aiops-frozen-sel-aiops-stg-32-s42-ep6
+train:
+  optim:
+    epochs: 6

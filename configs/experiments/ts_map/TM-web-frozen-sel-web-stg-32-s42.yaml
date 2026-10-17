@@ -1,0 +1,16 @@
+inherit: ../indomain/_web.yaml
+name: TM-web-frozen-sel-web-stg-32-s42
+train:
+  sampling: balanced_random
+  n_samples: 1788
+  seed: 42
+  optim:
+    lr: 0.0002
+    epochs: 3
+  monitor: dev-web
+  batch_like: raw
+  freeze_lm: true
+  state: selv_noarr:web-stg-32
+  ts_input:
+    value_types: true
+    value_block: select:web-stg-32

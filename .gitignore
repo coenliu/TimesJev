@@ -1,0 +1,7 @@
+data/TSQA/
+runs/
+results/*
+!results/.gitkeep
+.env
+__pycache__/
+*.egg-info/

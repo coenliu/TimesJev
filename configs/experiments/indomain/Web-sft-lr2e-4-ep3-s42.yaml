@@ -1,0 +1,10 @@
+inherit: _web.yaml
+name: Web-sft-lr2e-4-ep3-s42
+train:
+  sampling: balanced_random
+  n_samples: 1788
+  seed: 42
+  optim:
+    lr: 0.0002
+    epochs: 3
+  monitor: dev-web

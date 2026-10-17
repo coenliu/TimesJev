@@ -1,0 +1,16 @@
+inherit: ../indomain/_tf.yaml
+name: TM-tf-frozen-sel-tf-stg-32-s42
+train:
+  sampling: per_task
+  per_task_cap: 4000
+  seed: 42
+  optim:
+    lr: 0.0002
+    epochs: 3
+  monitor: dev-tf
+  batch_like: raw
+  freeze_lm: true
+  state: selv_noarr:tf-stg-32
+  ts_input:
+    value_types: true
+    value_block: select:tf-stg-32

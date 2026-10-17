@@ -1,0 +1,16 @@
+model: configs/models/decider_2b.yaml
+train: configs/train/sft_lora.yaml
+data:
+  source: tsqa
+  converters: [true_false]
+  splits: [train]
+  offset_scope: all
+  domain_offset: 3000
+  val_fraction: 0.02
+  shuffle_options: true
+  seed: 0
+eval:
+  - suffix: dev-tf
+    data: {source: tsqa, converters: [true_false], splits: [train], offset_scope: all, max_per_domain: 1000, val_fraction: 0.02, shuffle_options: true, seed: 0, state: "@train"}
+  - suffix: test-tf
+    data: {source: tsqa, converters: [true_false], splits: [train], offset_scope: all, max_per_domain: 2000, domain_offset: 1000, val_fraction: 0.02, shuffle_options: true, seed: 0, state: "@train"}

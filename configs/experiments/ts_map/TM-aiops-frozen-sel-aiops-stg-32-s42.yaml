@@ -1,0 +1,16 @@
+inherit: ../indomain/_aiops.yaml
+name: TM-aiops-frozen-sel-aiops-stg-32-s42
+train:
+  sampling: balanced_random
+  n_samples: 4000
+  seed: 42
+  optim:
+    lr: 0.0002
+    epochs: 3
+  monitor: dev-aiops
+  batch_like: raw
+  freeze_lm: true
+  state: selv_noarr:aiops-stg-32
+  ts_input:
+    value_types: true
+    value_block: select:aiops-stg-32

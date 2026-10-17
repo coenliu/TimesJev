@@ -1,0 +1,8 @@
+inherit: ../indomain/ID-sft-lr2e-4-ep3-s42.yaml
+name: D4B-env-sft-s42
+model: configs/models/decider_4b.yaml
+eval:
+  - suffix: dev-env
+    data: {source: tsqa, converters: [anomaly], splits: [train], domains: [Environment], max_per_domain: 1000, val_fraction: 0.02, shuffle_options: true, seed: 0, state: "@train"}
+  - suffix: test-env
+    data: {source: tsqa, converters: [anomaly], splits: [train], domains: [Environment], max_per_domain: 2000, domain_offset: 1000, val_fraction: 0.02, shuffle_options: true, seed: 0, state: "@train"}

@@ -1,0 +1,16 @@
+method: sft
+state: raw                  # input layout for training and evaluation (data/state.py)
+per_task_cap: null          # samples per TSQA converter
+max_ctx_tokens: 4096
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: null      # null = attention, Gated DeltaNet and MLP projections (sft.LORA_TARGETS)
+optim:
+  lr: 1.0e-4
+  epochs: 1
+  max_tokens_per_batch: 16384
+  warmup_ratio: 0.05
+  weight_decay: 0.0
+seed: 42

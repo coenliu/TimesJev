@@ -1,0 +1,7 @@
+inherit: ../ts_map/TM-mcq-frozen-sel-mcq-stg-32-s42.yaml
+name: D4B-mcq-frozen-sel-mcq-stg-32-s42
+model: configs/models/decider_4b.yaml
+# Each step's batch runs as 2 micro-batches with gradient accumulation, to fit in 32 GB.
+train:
+  optim:
+    grad_accum: 2

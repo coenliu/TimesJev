@@ -1,0 +1,3 @@
+inherit: ../indomain/CLS-sft-lr2e-4-ep3-s42.yaml
+name: D4B-cls-sft-s42
+model: configs/models/decider_4b.yaml

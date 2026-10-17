@@ -1,0 +1,16 @@
+inherit: ../indomain/_cls.yaml
+name: TM-cls-frozen-sel-cls-stg-32-s42
+train:
+  sampling: per_task
+  per_task_cap: 4000
+  seed: 42
+  optim:
+    lr: 0.0002
+    epochs: 3
+  monitor: dev-cls
+  batch_like: raw
+  freeze_lm: true
+  state: selv_noarr:cls-stg-32
+  ts_input:
+    value_types: true
+    value_block: select:cls-stg-32

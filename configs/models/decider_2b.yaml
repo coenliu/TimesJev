@@ -1,0 +1,5 @@
+backend: decider
+checkpoint: Mapika/decider-2b
+revision: null
+temperature: null     # null = use the model's own decider_config.json
+use_graphs: false    # eager mode: CUDA graphs recompile for every new input length

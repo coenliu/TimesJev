@@ -1,0 +1,16 @@
+inherit: ../indomain/_mcq.yaml
+name: TM-mcq-frozen-sel-mcq-stg-32-s42
+train:
+  sampling: per_task
+  per_task_cap: 4000
+  seed: 42
+  optim:
+    lr: 0.0002
+    epochs: 3
+  monitor: dev-mcq
+  batch_like: raw
+  freeze_lm: true
+  state: selv_noarr:mcq-stg-32
+  ts_input:
+    value_types: true
+    value_block: select:mcq-stg-32

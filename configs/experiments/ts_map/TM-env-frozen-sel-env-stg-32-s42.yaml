@@ -1,0 +1,16 @@
+inherit: ../indomain/_env_full.yaml
+name: TM-env-frozen-sel-env-stg-32-s42
+train:
+  sampling: balanced_random
+  n_samples: 4000
+  seed: 42
+  optim:
+    lr: 0.0002
+    epochs: 3
+  monitor: dev-env
+  batch_like: raw
+  freeze_lm: true
+  state: selv_noarr:env-stg-32
+  ts_input:
+    value_types: true
+    value_block: select:env-stg-32

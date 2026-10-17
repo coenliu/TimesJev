@@ -1,0 +1,8 @@
+inherit: _aiops.yaml
+name: AIOps-sft-lr2e-4-ep3-s42
+train:
+  sampling: balanced_random
+  n_samples: 4000
+  seed: 42
+  optim: {lr: 2.0e-4, epochs: 3}
+  monitor: dev-aiops
