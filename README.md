@@ -128,11 +128,6 @@ python scripts/evaluate.py configs/experiments/ts_map/TM-web-frozen-sel-web-stg-
 
 Each evaluation writes `runs/<name>-<suffix>_<time>/` (as above) and appends its metrics to `results/experiments.csv`.
 
-## Hardware and time
-
-On one RTX 5090, training the encoder with Decider-2B takes about 88 minutes for the four anomaly detection domains
-together, 29 minutes for classification, 13 minutes for MCQA, and 11 minutes for true/false QA.
-
 ## Licenses
 
 This code is released under the Apache License 2.0 (`LICENSE`). TSQA and the Decider models are also released
